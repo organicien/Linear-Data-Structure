@@ -1,0 +1,35 @@
+ALGORITHM linear_data_structure1
+VAR
+Set1 : ARRAY_OF INTEGER[N];
+Set2 : ARRAY_OF INTEGER[M];
+i,j,N,M,Sum1,Sum2:INTEGER;
+
+BEGIN
+Write ("give the length of Set1")
+Read(N)
+Write ("give the length of Set2")
+Read(M)
+Write('give the first array:')
+FOR i From 0 TO Set1.(N-1) DO
+Write(Set1[i])
+END_FOR
+Write('give the second array:')
+FOR j From 0 TO Set2.(M-1) DO
+Write(Set2[i])
+END_FOR
+Sum1:= 0;
+Sum2:= 0;
+FOR i FROM 0 TO Set1.length-1 DO
+FOR j FROM 0 TO Set2.length-1 DO
+    IF (Set1[i] != Set2[j]) THEN
+        Sum1:= Sum1+Set1[i];
+        ELSE IF (Set2[j] != Set1[i]) THEN
+            Sum1:= Sum1+Set2[j];
+        ELSE
+        Sum2:= Sum2+Set1[i] + Set2[j];
+    END_IF
+END_FOR
+END_FOR
+Write("The sum of distunct elements is",Sum1);
+Write("The sum of overlapping elements is",Sum2);
+END

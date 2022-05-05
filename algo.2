@@ -1,0 +1,23 @@
+ALGORITHM linear_data_structure2
+VAR
+htab: HASH_TABLE<ARRAY,INTEGER>;
+tab1,tab2 :ARRAY_OF INTEGER;
+sum1 = sum2 = 0;
+i,j: INTEGER;
+
+BEGIN
+FOR i FROM 0 TO tab1.length -1 STEP 1  DO
+FOR j FROM 0 TO tab2.length -1 STEP 1  DO
+       IF (htab.lookup(tab1[i]) == tab2[j]) THEN
+       sum1 += tab1[i];
+       IF (htab.lookup(tab1[j]) == tab1[i]) THEN
+           sum1 += tab2[j];
+       ELSE
+       sum2 += tab1[i]+ tab2[j];
+       END_IF
+       END_IF
+END_FOR 
+END_FOR       
+ htab.insert[sum1];
+ htab.insert[sum2];
+ END
